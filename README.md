@@ -3,7 +3,7 @@ This repository contains all the assignments and information from the VLSI Physi
 
 This repo has been divided into various subfolders for different days of the coursework
 Click on the links below to find the documents for each lab:
-- [Lab 1]()
+- [Lab 1](https://github.com/alfadelta10010/pes-asic-class/tree/main#day---1-lab-assignments)
 - [Lab 2]() - WIP
 
 ## Set up instructions for the coursework
@@ -153,3 +153,4 @@ long long int min = (long long int) (pow(2,5) *(-1));
 - The output is as follows:
 ![RV64 Long Long int, within limits](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/assets/rv_limits_within.png "RV64 long long int limits within limits")
 
+- This concludes assignment 4
