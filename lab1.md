@@ -1,1 +1,0 @@
-day1/lab1.md
