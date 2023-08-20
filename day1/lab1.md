@@ -38,7 +38,7 @@ riscv64-unknown-elf-objdump -d rv.o | less
 
 - If we change the optimization flag to `-Ofast` during disassembly, the number of instructions is reduced as shown below:
 ![RV Fast Disassembly](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/assets/rv_disassemble_fast.png)
-![RV Fast Object Dump](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/assets/rvfast_objdump.png)
+![RV Fast Object Dump](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/assets/rvfast_dump_main.png)
 
 - Here, we see there are 12 instructions in `main` function
 - This concludes assignment 2
