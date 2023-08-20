@@ -42,13 +42,36 @@ riscv64-unknown-elf-objdump -d rv.o | less
 - Here, we see there are 12 instructions in `main` function
 - This concludes assignment 2
 
-### Bonus: Running assignment 2
+## Assignment 3
+- Execute and debug the `1ton.c` on RISC-V simulator
 - To compile with riscv64-gcc:
 ```bash
-riscv64-unknown-elf-gcc 1ton.c -o rv.out
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o rv.out 1ton.c
 ```
 - This gives the following output:
 ![rv compile](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/assets/rv_compile.png "rv compile")
 
 - To execute, we use the [Spike RISC-V ISA Simulator](https://github.com/riscv-software-src/riscv-isa-sim) as follows:
 ![rv execution](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/assets/rv_exec.png "RV execution")
+
+- To debug, we start `spike` in debug mode, using:
+```bash
+spike -d pk rv.out
+```
+- To move the Program counter from 0 to the first instruction, we execute all the instructions in between, using:
+``` 
+until pc 0 100b0
+```
+- To find contents of the register `a0` before being written, we use
+```
+reg 0 a0
+```
+- To execute the next instruction, press enter
+- If we see the value of the register after execution, it has changed.
+- The output as follows:
+![Debug](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/assets/rv_debug.png "RV debug")
+
+- Seeing value of stack pointer update:
+![Stack pointer](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/assets/debug_sp.png "Stack Pointer")
+
+- Upon calculating, the value has changed by 10
