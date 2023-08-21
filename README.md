@@ -154,3 +154,40 @@ long long int min = (long long int) (pow(2,5) *(-1));
 ![RV64 Long Long int, within limits](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/assets/rv_limits_within.png "RV64 long long int limits within limits")
 
 - This concludes assignment 4
+
+## Day 2 Assignments
+
+### Assignment 1
+- Write `load.s` and `1to9_custom.c` as descibed in the algorithm
+- `load.s`
+```asm
+cat load.s 
+.section text
+.global load
+.type load, @function
+
+load:
+	add	a4, a0, zero
+	add	a2, a0, a1
+	add	a3, a0, zero
+loop:	add	a4, a3, a4
+	addi	a3, a3, 1
+	blt	a3, a2, loop
+	add	a0, a4, zero
+	ret
+```
+- `1to9_custom.c`
+```c
+cat 1to9_custom.c 
+#include <stdio.h>
+
+extern int load(int x, int y);
+
+int main()
+{
+	int result = 0;
+	int count = 9;
+	result = load(0x0, count + 1);
+	printf("Sum of nos. from 1 to %d is %d\n", count, result);
+}
+```
