@@ -1,4 +1,4 @@
-.section text
+.section .text
 .global load
 .type load, @function
 
