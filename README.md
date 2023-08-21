@@ -229,6 +229,7 @@ int main()
 	printf("Sum of nos. from 1 to %d is %d\n", count, result);
 }
 ```
+- This concludes assignment 1
 
 ### Assignment 2
 - Compile the code with the files and options with the following command:
@@ -244,5 +245,19 @@ spike pk 1to9_custom.o
 - This generates the following output:
 ![Execution](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2/assets/execute.png)
 
-- 
+- Inspecting the object dump:
+![Object dump](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2/assets/objdump.png)
 
+- This concludes assignment 2
+
+### Assignment 3
+- To run C program on PicoRV32 
+- Make the set-up script executable, and execute
+```bash
+chmod +x rv32im.sh
+./rv32im.sh
+```
+![Executable](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2/assets/executable.png)
+![Execution](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2/assets/execute2.png)
+
+- This concludes assignment 3
