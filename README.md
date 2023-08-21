@@ -42,6 +42,19 @@ gcc sum1ton.c -o x86.out
 ### Assignment 2
 - Disassemble the previous program to run on RISC-V processors
 - The [code](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/1ton.c) can be compiled for RISC-V processors using riscv64-gcc:
+```c
+#include <stdio.h>
+int main()
+{
+	int i, sum = 0, n = 5;
+	for(i = 1; i <= n; i++)
+	{
+		sum = sum + i;
+	}
+	printf("Sum of numbers from 1 to %d is %d \n", n, sum);
+	return 0;
+}
+```
 - To disassemble, we run the following command:
 ```bash
 riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o rv.o 1ton.c
@@ -103,7 +116,20 @@ reg 0 a0
 
 ### Assignment 4
 - Testing the limits of `long long int` on RV64I, on `unsigned` and `signed` integer.
-- Write the program  `unsignedLimits.c` [shown here](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/unsignedLimits.c)
+- Write the program  `unsignedLimits.c` [shown here](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/unsignedLimits.c):
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	unsigned long long int max = (unsigned long long int) (pow(2,64) -1);
+	unsigned long long int min = (unsigned long long int) (pow(2,64) *(-1));
+	printf("lowest number represented by unsigned 64-bit integer is %llu\n",min);
+	printf("highest number represented by unsigned 64-bit integer is %llu\n",max);
+	return 0;
+}
+```
+
 - To compile and run with riscv64-gcc:
 ```bash
 riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o limits.o unsignedLimits.c
@@ -128,7 +154,20 @@ unsigned long long int min = (unsigned long long int) (pow(2,5) *(-1));
 - The output is as follows:
 ![RV64 Long Long uint, within limits](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/assets/rv_ulimits_within.png "RV64 long long uint limits within limits")
 
-- Write the program  `signedLimits.c` [shown here](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/signedLimits.c)
+- Write the program  `signedLimits.c` [shown here](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1/signedLimits.c):
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	long long int max = (long long int) (pow(2,5) -1);
+	long long int min = (long long int) (pow(2,5) *(-1));
+	printf("lowest number represented by 64-bit integer is %lld\n",min);
+	printf("highest number represented by 64-bit integer is %lld\n",max);
+	return 0;
+}
+```
+
 - To compile and run with riscv64-gcc:
 ```bash
 riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o slimits.o signedLimits.c
@@ -161,8 +200,7 @@ long long int min = (long long int) (pow(2,5) *(-1));
 - Write `load.s` and `1to9_custom.c` as descibed in the algorithm
 - `load.s`
 ```asm
-cat load.s 
-.section text
+.section .text
 .global load
 .type load, @function
 
@@ -191,3 +229,20 @@ int main()
 	printf("Sum of nos. from 1 to %d is %d\n", count, result);
 }
 ```
+
+### Assignment 2
+- Compile the code with the files and options with the following command:
+```bash
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o 1to9_custom.o 1to9_custom.c load.s
+```
+![Compile](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2/assets/compile.png "Compile")
+
+- To run, use the following command:
+```bash
+spike pk 1to9_custom.o
+```
+- This generates the following output:
+![Execution](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2/assets/execute.png)
+
+- 
+
