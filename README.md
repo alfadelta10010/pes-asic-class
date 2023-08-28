@@ -267,16 +267,16 @@ chmod +x rv32im.sh
 
 ### Lab 1
 - Simulating `good_mux.v` and seeing outputs in **gtkwave**
-![Simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2)
-![GTKWave](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2)
+![Simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1_rtl/assets/iverilog_and_simulate.png)
+![GTKWave](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1_rtl/assets/gtkwave.png)
 - This concludes lab 1
 
 ### Lab 2 
 - smth `good_mux.v` in YoSys
 - First we read liberty file:
-![liberty file](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2)
+![liberty file](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1_rtl/assets/read-liberty.png)
 - Next we read the verilog file:
-![read verilog](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2)
+![read verilog](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1_rtl/assets/read-verilog.png)
 
 - Then we synthesize the top-level design
 ```
@@ -350,4 +350,4 @@ ABC RESULTS:           input signals:        3
 ABC RESULTS:          output signals:        1
 ```
 - Now we use `show` command to view the logic diagaram:
-![show command](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2)
+![show command](https://github.com/alfadelta10010/pes-asic-class/blob/main/day1_rtl/assets/show-command.png)
