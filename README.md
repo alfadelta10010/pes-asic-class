@@ -5,7 +5,7 @@ This repo has been divided into various subfolders for different days of the cou
 Click on the links below to find the documents for each lab:
 - [Lab 1](https://github.com/alfadelta10010/pes-asic-class/tree/main#day---1-lab-assignments)
 - [Lab 2](https://github.com/alfadelta10010/pes-asic-class/blob/main/README.md#day-2-assignments)
-
+- [Day 1 - RTL](https://github.com/alfadelta10010/pes-asic-class/tree/main#day-1-assignments---rtl)
 ## Set up instructions for the coursework
 The software required is as follows:
 - [RISC-V GNU Compiler Toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain)
