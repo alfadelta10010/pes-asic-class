@@ -4,7 +4,7 @@ This repository contains all the assignments and information from the VLSI Physi
 This repo has been divided into various subfolders for different days of the coursework
 Click on the links below to find the documents for each lab:
 - [Lab 1](https://github.com/alfadelta10010/pes-asic-class/tree/main#day---1-lab-assignments)
-- [Lab 2]() - WIP
+- [Lab 2](https://github.com/alfadelta10010/pes-asic-class/blob/main/README.md#day-2-assignments)
 
 ## Set up instructions for the coursework
 The software required is as follows:
@@ -261,6 +261,7 @@ chmod +x rv32im.sh
 ![Execution](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2/assets/execute2.png)
 
 - This concludes assignment 3
+
 
 ## Day 1 Assignments - RTL
 
