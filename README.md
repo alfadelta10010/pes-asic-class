@@ -261,3 +261,92 @@ chmod +x rv32im.sh
 ![Execution](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2/assets/execute2.png)
 
 - This concludes assignment 3
+
+## Day 1 Assignments - RTL
+
+### Lab 1
+- Simulating `good_mux.v` and seeing outputs in **gtkwave**
+![Simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2)
+![GTKWave](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2)
+- This concludes lab 1
+
+### Lab 2 
+- smth `good_mux.v` in YoSys
+- First we read liberty file:
+![liberty file](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2)
+- Next we read the verilog file:
+![read verilog](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2)
+
+- Then we synthesize the top-level design
+```
+yosys> synth -top good_mux 
+
+3. Executing SYNTH pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1.1. Analyzing design hierarchy..
+Top module:  \good_mux
+
+3.1.2. Analyzing design hierarchy..
+Top module:  \good_mux
+Removed 0 unused modules.
+
+3.2. Executing PROC pass (convert processes to netlists).
+
+<removed extended output>
+
+3.25. Printing statistics.
+
+=== good_mux ===
+
+   Number of wires:                  4
+   Number of wire bits:              4
+   Number of public wires:           4
+   Number of public wire bits:       4
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $_MUX_                          1
+
+3.26. Executing CHECK pass (checking for obvious problems).
+Checking module good_mux...
+Found and reported 0 problems.
+```
+- Next we generate gate level file:
+```
+yosys> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+4. Executing ABC pass (technology mapping using ABC).
+
+4.1. Extracting gate netlist of module `\good_mux' to `<abc-temp-dir>/input.blif'..
+Extracted 1 gates and 4 wires to a netlist network with 3 inputs and 1 outputs.
+
+4.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/alphadelta1803/Desktop/folder/sky130RTLDesignAndSynthesisWorkshop/verilog_files/../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.11 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+<removed output>
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:        1
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+```
+- Part we are interested in:
+```
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:        1
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:        1
+```
+- Now we use `show` command to view the logic diagaram:
+![show command](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2)
