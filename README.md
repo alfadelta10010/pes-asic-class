@@ -546,3 +546,12 @@ endmodule
 ![show command](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2_rtl/assets/show_submodule1.png)
 
 - This concludes lab 2
+
+### Lab 3.1
+- Async Reset D-Flip Flop Synthesis and Simulations
+- Simulation:
+![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2_rtl/assets/dff_async_res_sim1.png)
+![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2_rtl/assets/dff_async_res_sim2.png)
+
+- Synthesis:
+![synthesis](https://github.com/alfadelta10010/pes-asic-class/blob/main/day2_rtl/assets/dff_async_res_show.png)
