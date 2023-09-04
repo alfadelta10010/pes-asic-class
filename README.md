@@ -891,3 +891,53 @@ endmodule
 ![show](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/counter_opt2_show.png)
 
 - END OF LAB 3
+
+## Day 4 Assignments - RTL
+### Lab 1 
+- GLS and Synthesis-Simulation Mismatch
+#### Lab 1.1
+- 'ternary_operator_mux.v'
+```verilog
+module ternary_operator_mux (input i0 , input i1 , input sel , output y);
+	assign y = sel?i1:i0;
+endmodule
+```
+- Simulation:
+![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/tern_op_sim1.png)
+![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/tern_op_sim2.png)
+
+- Synthesis report:
+![synthesis](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/tern_op_synth_report.png)
+- `show` command:
+![show](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/tern_op_show.png)
+
+- GLS to Gate-Level Simulation
+![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/tern_op_gls_sim1.png)
+![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/tern_op_gls_sim2.png)
+
+#### Lab 1.2
+- 'bad_mux.v'
+```verilog
+module bad_mux (input i0 , input i1 , input sel , output reg y);
+always @ (sel)
+begin
+	if(sel)
+		y <= i1;
+	else 
+		y <= i0;
+end
+endmodule
+```
+- Simulation:
+![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/bad_mux_sim1.png)
+![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/bad_mux_sim2.png)
+
+- Synthesis report:
+![synthesis](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/bad_mux_synth_report.png)
+- `show` command:
+![show](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/bad_mux_show.png)
+
+- GLS to Gate-Level Simulation
+![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/bad_mux_gls_sim1.png)
+![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/bad_mux_gls_sim2.png)
+
