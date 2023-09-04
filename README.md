@@ -949,9 +949,9 @@ endmodule
 ![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/bad_mux_sim2.png)
 
 - Synthesis report:
-![synthesis](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/bad_mux_synth_report.png)
+![synthesis](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/bad_mux_synth_report.png)
 - `show` command:
-![show](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/bad_mux_show.png)
+![show](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/bad_mux_show.png)
 
 - GLS to Gate-Level Simulation
 ![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/bad_mux_gls_sim1.png)
@@ -975,9 +975,9 @@ endmodule
 ![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/block_sim2.png)
 
 - Synthesis report:
-![synthesis](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/block_synth_report.png)
+![synthesis](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/block_synth_report.png)
 - `show` command:
-![show](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/block_show.png)
+![show](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/block_show.png)
 
 - GLS to Gate-Level Simulation
 ![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/block_gls_sim1.png)
