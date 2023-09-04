@@ -8,6 +8,7 @@ Click on the links below to find the documents for each lab:
 - [Day 1 - RTL](https://github.com/alfadelta10010/pes-asic-class/tree/main#day-1-assignments---rtl)
 - [Day 2 - RTL](https://github.com/alfadelta10010/pes-asic-class/tree/main#day-2-assignments---rtl)
 - [Day 3 - RTL](https://github.com/alfadelta10010/pes-asic-class/tree/main#day-3-assignments---rtl)
+- [Day 4 - RTL](https://github.com/alfadelta10010/pes-asic-class/tree/main#day-4-assignments---rtl)
 
 ## Set up instructions for the coursework
 The software required is as follows:
@@ -360,6 +361,21 @@ ABC RESULTS:          output signals:        1
 ### Lab 1
 - `multiple_modules.v`
 ```verilog
+module sub_module2 (input a, input b, output y);
+	assign y = a | b;
+endmodule
+
+module sub_module1 (input a, input b, output y);
+	assign y = a&b;
+endmodule
+
+
+module multiple_modules (input a, input b, input c , output y);
+	wire net1;
+	sub_module1 u1(.a(a),.b(b),.y(net1));  //net1 = a&b
+	sub_module2 u2(.a(net1),.b(c),.y(y));  //y = net1|c ,ie y = a&b + c;
+endmodule
+
 ```
 - Synthesizing the top module:
 ```
@@ -907,9 +923,9 @@ endmodule
 ![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/tern_op_sim2.png)
 
 - Synthesis report:
-![synthesis](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/tern_op_synth_report.png)
+![synthesis](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/tern_op_synth_report.png)
 - `show` command:
-![show](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/tern_op_show.png)
+![show](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/tern_op_show.png)
 
 - GLS to Gate-Level Simulation
 ![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/tern_op_gls_sim1.png)
