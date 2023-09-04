@@ -941,3 +941,30 @@ endmodule
 ![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/bad_mux_gls_sim1.png)
 ![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/bad_mux_gls_sim2.png)
 
+### Lab 2
+- Synth-Sim Mismatch for Blocking Statement
+- 'blocking_caveat.v'
+```verilog
+module blocking_caveat (input a , input b , input  c, output reg d); 
+reg x;
+always @ (*)
+begin
+	d = x & c;
+	x = a | b;
+end
+endmodule
+```
+- Simulation:
+![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/block_sim1.png)
+![simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/block_sim2.png)
+
+- Synthesis report:
+![synthesis](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/block_synth_report.png)
+- `show` command:
+![show](https://github.com/alfadelta10010/pes-asic-class/blob/main/day3_rtl/assets/block_show.png)
+
+- GLS to Gate-Level Simulation
+![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/block_gls_sim1.png)
+![gls simulation](https://github.com/alfadelta10010/pes-asic-class/blob/main/day4_rtl/assets/block_gls_sim2.png)
+
+- This concludes lab 2
