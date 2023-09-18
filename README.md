@@ -13,7 +13,7 @@ Click on the links below to find the documents for each lab:
 ## Set up instructions for the coursework
 The software required is as follows:
 - [RISC-V GNU Compiler Toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain)
-	- :warning: GCC-12 gives compiling issues for the proxy kernel, using GCC-8.3 solves this issue. You can download the pre-compiled toolchain from [here](https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14.tar.gz)
+	- :warning: Make toolchain with flag `--with-isa-spec=2.2`
 - [Spike RISC-V ISA Simulator](https://github.com/riscv-software-src/riscv-isa-sim)
 - [RISC-V Proxy Kernel and Boot loader](https://github.com/riscv-software-src/riscv-pk)
 - [YoSys]()
